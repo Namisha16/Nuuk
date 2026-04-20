@@ -17,7 +17,7 @@ export function Lifestyle() {
             className="aspect-square rounded-2xl overflow-hidden"
           >
             <img 
-              src="/interior_living_1_1776664614892.png" 
+              src="https://cdn.shopify.com/s/files/1/0582/3971/3322/files/1_31e6fc06-913f-401e-a7a7-85ec588a5a4e.jpg?v=1757781659" 
               alt="HĀLO in living room" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
@@ -31,7 +31,7 @@ export function Lifestyle() {
             className="aspect-square rounded-2xl overflow-hidden"
           >
             <img 
-              src="/interior_living_2_1776664651910.png" 
+              src="https://cdn.shopify.com/s/files/1/0582/3971/3322/files/2_097a4258-10bb-453c-a604-f99e42bdbc10.jpg?v=1757781659" 
               alt="HĀLO in bedroom" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />

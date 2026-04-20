@@ -19,7 +19,7 @@ export function ProductShowcase() {
           className="relative max-w-5xl mx-auto rounded-2xl overflow-hidden mb-16 shadow-[0_0_50px_rgba(34,211,238,0.15)]"
         >
           <img 
-            src="/clean_air_fan_grid_1776664472913.png" 
+            src="https://cdn.shopify.com/s/files/1/0582/3971/3322/files/3_e2edfd98-c1af-4d88-8fbb-e9780c71011b.jpg?v=1757781659" 
             alt="Clean Air Filter Visualization" 
             className="w-full h-auto object-cover"
           />

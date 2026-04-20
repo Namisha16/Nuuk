@@ -13,7 +13,7 @@ export function Hero() {
           className="relative"
         >
           <img
-            src="/hero_fan_living_room_1776664334304.png"
+            src="https://cdn.shopify.com/s/files/1/0582/3971/3322/files/1_d5ce7348-96a9-4c3c-88f7-9b4836fc8041.jpg?v=1757781659"
             alt="Living room with fan"
             className="w-full h-auto object-cover rounded-sm aspect-[4/3]"
           />

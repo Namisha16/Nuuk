@@ -11,9 +11,9 @@ export function ShopBanner() {
         
         <div className="flex-1 flex justify-center max-h-[300px] relative -my-16 pointer-events-none">
           <img 
-            src="/shop_banner_fan_1776664598139.png" 
+            src="https://cdn.shopify.com/s/files/1/0582/3971/3322/files/5_bf7011cb-7029-447e-8d0d-d57bacd1be58.jpg?v=1757781659" 
             alt="HĀLO Fan" 
-            className="h-[400px] w-auto object-contain scale-125 md:scale-150 transform -translate-y-12"
+            className="h-[400px] w-auto object-contain scale-125 md:scale-150 transform -translate-y-12 mix-blend-multiply"
           />
         </div>
 

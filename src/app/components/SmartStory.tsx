@@ -15,9 +15,9 @@ export function SmartStory() {
             className="flex justify-center"
           >
             <img 
-              src="/app_interface_mockup_1776664370694.png" 
+              src="https://cdn.shopify.com/s/files/1/0582/3971/3322/files/10_3c116381-39e1-4aca-93f9-1a9bc9d5833f.jpg?v=1757781659" 
               alt="HĀLO App Interface" 
-              className="max-w-[320px] w-full drop-shadow-2xl rounded-[3rem]"
+              className="max-w-[320px] w-full drop-shadow-2xl rounded-[3rem] mix-blend-multiply"
             />
           </motion.div>
 

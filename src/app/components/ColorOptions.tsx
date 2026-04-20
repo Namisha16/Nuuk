@@ -10,19 +10,19 @@ export function ColorOptions() {
       id: "black",
       name: "Midnight Black",
       hex: "#1a1a1a",
-      image: "https://images.unsplash.com/photo-1635862654193-9769041d61c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+      image: "https://cdn.shopify.com/s/files/1/0582/3971/3322/files/4_e3e45ecb-dafe-4d03-abd1-3d5443903ff6.jpg?v=1757781659",
     },
     {
       id: "white",
       name: "Arctic White",
       hex: "#f5f5f5",
-      image: "https://images.unsplash.com/photo-1656428005715-74cbf05fdefb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+      image: "https://cdn.shopify.com/s/files/1/0582/3971/3322/files/2_20427732-4406-476e-8ccd-1209cec482c0.jpg?v=1757781659",
     },
     {
       id: "silver",
       name: "Brushed Silver",
       hex: "#c0c0c0",
-      image: "https://images.unsplash.com/photo-1627807451413-534ab2538862?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+      image: "https://cdn.shopify.com/s/files/1/0582/3971/3322/files/3_c3404904-4270-4210-9cff-546720b19e58.jpg?v=1757781659",
     },
   ];
 
@@ -64,7 +64,7 @@ export function ColorOptions() {
                     <img
                       src={color.image}
                       alt={color.name}
-                      className="w-4/5 h-4/5 object-contain drop-shadow-2xl"
+                      className="w-4/5 h-4/5 object-contain drop-shadow-2xl mix-blend-multiply"
                     />
                   </div>
                 </motion.div>

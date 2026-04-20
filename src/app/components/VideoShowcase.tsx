@@ -47,9 +47,9 @@ export function VideoShowcase() {
             {/* Placeholder Image */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-black">
               <img
-                src="https://images.unsplash.com/photo-1571164860029-856acbc24b4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+                src="https://cdn.shopify.com/s/files/1/0582/3971/3322/files/9_843ac137-8364-43cc-9ebe-6b78227e5c8e.jpg?v=1757781659"
                 alt="HĀLO in living room"
-                className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-700"
+                className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-700 mix-blend-screen"
               />
             </div>
 
