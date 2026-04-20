@@ -1,0 +1,7 @@
+node_modules
+dist
+dist-ssr
+*.local
+node-v20.12.2-win-x64
+PortableGit
+.DS_Store
