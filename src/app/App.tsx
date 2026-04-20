@@ -1,34 +1,30 @@
-import { AnnouncementBar } from "./components/AnnouncementBar";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { SmartStory } from "./components/SmartStory";
+import { TrustBar } from "./components/TrustBar";
 import { AirflowVisualization } from "./components/AirflowVisualization";
+import { FeaturesStrip } from "./components/FeaturesStrip";
 import { ProductShowcase } from "./components/ProductShowcase";
 import { TechSpecs } from "./components/TechSpecs";
-import { ShopBanner } from "./components/ShopBanner";
-import { ComparisonTable } from "./components/ComparisonTable";
 import { Lifestyle } from "./components/Lifestyle";
-import { PremiumCTA } from "./components/PremiumCTA";
-import { Reviews } from "./components/Reviews";
+import { ComparisonTable } from "./components/ComparisonTable";
 import { FAQ } from "./components/FAQ";
 import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white antialiased">
-      <AnnouncementBar />
+    <div className="min-h-screen bg-brand-bg antialiased">
       <Navbar />
-      <Hero />
-      <SmartStory />
-      <AirflowVisualization />
-      <ProductShowcase />
-      <TechSpecs />
-      <ShopBanner />
-      <ComparisonTable />
-      <Lifestyle />
-      <PremiumCTA />
-      <Reviews />
-      <FAQ />
+      <main>
+        <Hero />
+        <TrustBar />
+        <AirflowVisualization />
+        <FeaturesStrip />
+        <ProductShowcase />
+        <TechSpecs />
+        <Lifestyle />
+        <ComparisonTable />
+        <FAQ />
+      </main>
       <Footer />
     </div>
   );

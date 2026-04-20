@@ -3,27 +3,25 @@ export function TechSpecs() {
     { label: "Dimensions", value: "32cm (W) × 85cm (H)" },
     { label: "Weight", value: "3.8 kg" },
     { label: "Power", value: "45W max consumption" },
-    { label: "Noise Level", value: "<30dB (whisper quiet)" },
-    { label: "Oscillation", value: "120° horizontal, 45° vertical" },
+    { label: "Noise Level", value: "<30dB (Library Quiet)" },
+    { label: "Oscillation", value: "120° H • 90° V" },
     { label: "Airflow Coverage", value: "Up to 450 sq ft" },
-    { label: "App Control", value: "iOS & Android compatible" },
-    { label: "Filtration", value: "HEPA 13, Active Carbon, UV-C" },
-    { label: "Cable Length", value: "2m fabric-braided cord" },
-    { label: "Warranty", value: "2-year comprehensive" },
+    { label: "App Control", value: "iOS & Android" },
+    { label: "Cable Length", value: "2m Fabric Braided" },
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-[800px] mx-auto px-8 md:px-16">
-        <h2 className="text-3xl font-bold tracking-tight mb-12 text-center">
-          Technical Specifications
+    <section className="py-32 bg-white">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-20 text-black">
+          Tech Specs
         </h2>
         
-        <div className="space-y-4">
+        <div className="grid md:grid-cols-2 gap-x-24 gap-y-2 border-t border-black/10">
           {specs.map((spec, i) => (
-            <div key={i} className="flex justify-between py-4 border-b border-gray-100 last:border-0">
-              <span className="text-gray-500">{spec.label}</span>
-              <span className="font-medium">{spec.value}</span>
+            <div key={i} className="flex justify-between items-center py-6 border-b border-black/5">
+              <span className="text-sm font-bold uppercase tracking-widest text-gray-400">{spec.label}</span>
+              <span className="text-base font-bold text-black">{spec.value}</span>
             </div>
           ))}
         </div>

@@ -1,137 +1,131 @@
 import { motion } from "motion/react";
-import { Check, Truck, Shield } from "lucide-react";
+import { Check, Info } from "lucide-react";
+import { useState } from "react";
 
 export function Hero() {
+  const [selectedEmi, setSelectedEmi] = useState(12);
+
+  const emiOptions = [
+    { months: 3, amount: 4500, label: "No cost EMI" },
+    { months: 6, amount: 2250, label: "No cost EMI" },
+    { months: 12, amount: 1125, label: "Most Popular", highlighted: true },
+    { months: 18, amount: 750, label: "Lowest EMI" },
+  ];
+
   return (
-    <section className="pt-32 pb-16 px-8 md:px-16 max-w-[1600px] mx-auto bg-white">
-      <div className="grid md:grid-cols-2 gap-16 items-start">
-        {/* Left: Product Image */}
+    <section className="pt-24 md:pt-32 pb-16 px-6 md:px-10 max-w-[1400px] mx-auto bg-white">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        {/* Left: Content */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative"
+          className="order-2 lg:order-1 space-y-8"
         >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0582/3971/3322/files/1_d5ce7348-96a9-4c3c-88f7-9b4836fc8041.jpg?v=1757781659"
-            alt="Living room with fan"
-            className="w-full h-auto object-cover rounded-sm aspect-[4/3]"
-          />
-        </motion.div>
-
-        {/* Right: Content */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-8"
-        >
-          <div className="space-y-4">
-            <span className="text-sm font-semibold tracking-wider uppercase text-gray-500">
-              New Arrival
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-black">
-              The HĀLO v2 LĪNKD
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
+              <span className="w-2 h-2 bg-brand-red rounded-full animate-pulse" />
+              <span className="text-xs font-bold tracking-wider uppercase text-black">
+                HĀLO V2 LINKD
+              </span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-black leading-[1.1]">
+              India's Most <br className="hidden md:block" /> Silent Air Circulator
             </h1>
-            <p className="text-xl text-gray-600">
-              Clean air. Quiet operation.
-            </p>
+            
+            <div className="flex items-baseline gap-4">
+              <span className="text-3xl md:text-4xl font-bold text-black">₹13,499</span>
+              <span className="text-xl text-gray-400 line-through">₹16,999</span>
+              <span className="text-sm font-bold text-brand-green bg-brand-green/10 px-2 py-0.5 rounded">20% OFF</span>
+            </div>
           </div>
 
-          <div className="text-4xl font-semibold tracking-tight">
-            ₹13,499
-          </div>
+          {/* EMI Card */}
+          <div className="bg-brand-mint rounded-2xl p-5 md:p-6 space-y-4 border border-brand-green/20 shadow-sm">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-brand-green flex items-center justify-center">
+                  <Check className="w-3 h-3 text-white" />
+                </div>
+                <span className="text-sm font-bold text-black">0% Interest EMI Available</span>
+              </div>
+              <Info className="w-4 h-4 text-gray-400 cursor-help" />
+            </div>
 
-          <div className="bg-green-50 border border-green-200 border-dashed rounded-lg p-4">
-            <p className="text-green-800 text-sm">
-              <span className="font-semibold">Extra 5% off</span> on all prepaid orders. Code: <span className="font-bold">HALO5</span>
-            </p>
-            <p className="text-green-800 text-sm mt-1">
-              <span className="font-semibold">Buy now, pay later</span> with 0% EMI up to 6 months.
-            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {emiOptions.map((option) => (
+                <button
+                  key={option.months}
+                  onClick={() => setSelectedEmi(option.months)}
+                  className={`relative p-3 rounded-xl border-2 transition-all text-left ${
+                    selectedEmi === option.months
+                      ? "bg-white border-brand-green shadow-md scale-[1.02]"
+                      : "bg-white/50 border-transparent hover:bg-white/80"
+                  }`}
+                >
+                  {option.highlighted && (
+                    <span className="absolute -top-2 left-2 px-2 py-0.5 bg-brand-green text-[10px] font-bold text-white rounded-full leading-none">
+                      {option.label}
+                    </span>
+                  )}
+                  <div className="text-sm font-bold text-black">₹{option.amount}/mo</div>
+                  <div className="text-[10px] text-gray-500 font-medium uppercase tracking-tight">
+                    {option.months} Months {!option.highlighted && `• ${option.label}`}
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="flex-1 bg-[#FF0033] text-white py-4 rounded-full font-medium text-lg hover:bg-red-600 transition-colors">
-              Add to cart
+            <button className="flex-1 bg-black text-white py-4 rounded-full font-bold text-base hover:bg-gray-900 transition-all active:scale-[0.98]">
+              Buy Now
             </button>
-            <button className="flex-1 bg-black text-white py-4 rounded-full font-medium text-lg hover:bg-gray-900 transition-colors">
-              Buy now
+            <button className="flex-1 bg-brand-red text-white py-4 rounded-full font-bold text-base hover:bg-red-600 transition-all active:scale-[0.98]">
+              Add to Cart
             </button>
           </div>
 
-          <div className="space-y-3 pt-4 border-t border-gray-100">
-            <label className="text-sm font-medium text-gray-700">Check delivery</label>
-            <div className="flex gap-2 max-w-sm">
-              <input 
-                type="text" 
-                placeholder="Enter PIN code" 
-                className="flex-1 border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-black"
-              />
-              <button className="bg-gray-100 text-black px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-200 transition-colors">
-                Check
-              </button>
-            </div>
-            <p className="text-xs text-green-600 flex items-center gap-1 mt-2">
-              <Check className="w-3 h-3" /> Delivery available in 2-3 days
-            </p>
-          </div>
+          <p className="text-center md:text-left text-xs text-gray-500 font-medium">
+            *Delivery within 2-4 business days across India
+          </p>
+        </motion.div>
+
+        {/* Right: Product Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="order-1 lg:order-2 relative aspect-square"
+        >
+          <div className="absolute inset-0 bg-gradient-to-tr from-gray-50 to-transparent rounded-full -z-10" />
+          <img
+            src="https://cdn.shopify.com/s/files/1/0582/3971/3322/files/1_d5ce7348-96a9-4c3c-88f7-9b4836fc8041.jpg?v=1757781659"
+            alt="NUUK HĀLO v2"
+            className="w-full h-full object-contain mix-blend-multiply"
+          />
         </motion.div>
       </div>
 
-      {/* Features below hero */}
-      <div className="grid grid-cols-3 gap-8 mt-24 border-t border-gray-100 pt-16 text-center">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="flex flex-col items-center gap-4"
-        >
-          <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center">
-            <svg className="w-6 h-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-            </svg>
+      {/* Features strip below hero */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-16 border-t border-gray-100">
+        {[
+          { title: "Quiet", desc: "<30dB Silence", icon: "🔇" },
+          { title: "Airflow", desc: "10m Distance", icon: "💨" },
+          { title: "Control", desc: "App & Remote", icon: "📱" },
+          { title: "Energy", desc: "BLDC Engine", icon: "⚡" }
+        ].map((feat, i) => (
+          <div key={i} className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-xl">
+              {feat.icon}
+            </div>
+            <div>
+              <h3 className="font-bold text-sm text-black">{feat.title}</h3>
+              <p className="text-xs text-gray-500">{feat.desc}</p>
+            </div>
           </div>
-          <div>
-            <h3 className="font-semibold text-lg">&lt; 30dB Quiet</h3>
-            <p className="text-gray-500 text-sm mt-1">Ultra-silent operation</p>
-          </div>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="flex flex-col items-center gap-4"
-        >
-          <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center">
-            <svg className="w-6 h-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg">3D Airflow</h3>
-            <p className="text-gray-500 text-sm mt-1">Multi-directional oscillation</p>
-          </div>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="flex flex-col items-center gap-4"
-        >
-          <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center">
-            <svg className="w-6 h-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg">Smart Control</h3>
-            <p className="text-gray-500 text-sm mt-1">App & Voice enabled</p>
-          </div>
-        </motion.div>
+        ))}
       </div>
     </section>
   );

@@ -26,34 +26,26 @@ export function FeaturesStrip() {
   ];
 
   return (
-    <section className="py-40 md:py-48 bg-white relative overflow-hidden">
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/[0.01] to-transparent pointer-events-none" />
-
-      <div className="max-w-[1600px] mx-auto px-8 md:px-16 relative">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-16 md:gap-24">
+    <section className="py-24 md:py-32 bg-brand-bg relative overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 relative">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: index * 0.12, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group flex flex-col items-center text-center gap-8"
+              className="group flex flex-col items-center text-center gap-6"
             >
-              <div className="relative">
-                <motion.div
-                  className="absolute inset-0 bg-black/5 rounded-full blur-2xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                />
-                <div className="relative w-20 h-20 rounded-full border border-black/[0.08] flex items-center justify-center group-hover:border-black/20 transition-colors duration-500">
-                  <feature.icon className="w-10 h-10 stroke-[0.75] text-black/50 group-hover:text-black/70 transition-colors duration-500" />
-                </div>
+              <div className="relative w-16 h-16 rounded-full bg-white shadow-sm border border-black/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                <feature.icon className="w-8 h-8 stroke-[1.5] text-black" />
               </div>
-              <div className="space-y-2">
-                <p className="text-sm tracking-wide text-black/80">
+              <div className="space-y-1">
+                <p className="text-base font-bold text-black">
                   {feature.label}
                 </p>
-                <p className="text-xs text-black/30 tracking-wide">
+                <p className="text-xs font-medium text-gray-500 tracking-tight">
                   {feature.desc}
                 </p>
               </div>
